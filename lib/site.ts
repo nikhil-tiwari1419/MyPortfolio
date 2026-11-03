@@ -22,7 +22,7 @@ export const site = {
     "Software Developer India",
   ],
   avatar: "https://avatars.githubusercontent.com/u/190438051?v=4",
-  email: process.env.NEXT_PUBLIC_EMAIL ?? "",
+  email:"developernikhil14@gmail.com",
   socials: {
     github: "https://github.com/nikhil-tiwari1419",
     linkedin: "https://www.linkedin.com/in/nikhil-tiwari-53743b339/",
@@ -136,7 +136,7 @@ export const stack: StackGroup[] = [
   },
   { label: "Tooling", 
     icon: "tooling", 
-    items: ["Git", "GitHub", "GitHub Actions", "Docker", "Vercel", "Render", "Postman", "CodeRabbit"] },
+    items: ["Git", "GitHub", "GitHub Actions", "Docker", "Vercel", "Render", "Postman", "CodeRabbit","npm", "pnpm"] },
   {
     label: "AI & data",
     icon: "ai",
