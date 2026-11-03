@@ -1,7 +1,7 @@
 import {
   siBetterauth, siCoderabbit, siCss, siDocker, siExpress, siFastapi, siGit, siGithub, siGithubactions, siGooglegemini, siGraphql, siJavascript,
   siJsonwebtokens, siMongodb, siNextdotjs, siNodedotjs, siNumpy, siPandas, siPostgresql, siPostman, siPython,
-  siPytorch, siReact, siRedis, siRedux, siRender, siScikitlearn, siTailwindcss, siTensorflow, siTypescript,
+  siPytorch, siReact, siRedis, siRedux,siN8n,siNpm,siPnpm, siRender, siScikitlearn, siTailwindcss, siTensorflow, siTypescript,
   siVercel, siVite, siZod, type SimpleIcon,
 } from "simple-icons";
 
@@ -22,6 +22,9 @@ export const techIcons: Record<string, SimpleIcon> = {
   "GitHub Actions": siGithubactions,
   Vercel: siVercel,
   Git: siGit,
+  n8n:siN8n,
+  npm:siNpm,
+  pnpm:siPnpm,
   Python: siPython,
   Pandas: siPandas,
   NumPy: siNumpy,

@@ -52,6 +52,7 @@ export default function Home() {
             <p className="mt-2 text-lg text-muted">{site.role}</p>
           </div>
           <p className="hero-in mt-5 max-w-[62ch] leading-relaxed text-muted">{site.intro}</p>
+          <p className="hero-in mt-5 max-w-[62ch] leading-relaxed text-muted">{site.about}</p>
           <div className="hero-in mt-7 flex flex-wrap items-center gap-3">
             <a href="#projects" className={`${btn} bg-fg text-bg hover:bg-fg/90`}>
               View projects

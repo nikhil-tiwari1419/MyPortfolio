@@ -30,7 +30,7 @@ export const site = {
   intro:
     "I build fast, accessible web apps end to end, from the database schema to the pixel-perfect UI. I work mostly with React, Next.js, Node.js and MongoDB, and I'm now exploring how to bring Gen AI into real applications.",
   about:
-    "Nikhil Tiwari is a software developer and student working on full-stack applications, with a focus on web apps and a growing interest in data science and Gen AI. He contributes to open source and helps fellow juniors get started.",
+    "Nikhil Tiwari is a software developer and student working on full-stack applications, with a focus on web apps / Ai Automation and a growing interest in data science and Gen AI. He contributes to open source and helps fellow juniors get started.",
 } as const;
 
 export type Experience = {
@@ -136,7 +136,7 @@ export const stack: StackGroup[] = [
   },
   { label: "Tooling", 
     icon: "tooling", 
-    items: ["Git", "GitHub", "GitHub Actions", "Docker", "Vercel", "Render", "Postman", "CodeRabbit","npm", "pnpm"] },
+    items: ["Git", "GitHub", "GitHub Actions", "Docker","n8n", "Vercel", "Render", "Postman", "CodeRabbit","npm", "pnpm"] },
   {
     label: "AI & data",
     icon: "ai",
