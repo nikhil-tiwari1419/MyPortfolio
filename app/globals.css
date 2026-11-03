@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* class-based dark mode, driven by next-themes (light | dark | system) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --bg: #fbfaf7;
+  --fg: #1d1c19;
+  --muted: #6c6a63;
+  --line: #e4e1d9;
+  --line-strong: #cdc9be;
+  --hover: rgb(0 0 0 / 0.03);
+  --dot: #d8d4c9;
+  --ok: #16a34a;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #1f1e1a;
+  --fg: #eceae3;
+  --muted: #9b988e;
+  --line: #34322c;
+  --line-strong: #4a4740;
+  --hover: rgb(255 255 255 / 0.035);
+  --dot: #36342e;
+  --ok: #4ade80;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-hover: var(--hover);
+  --color-ok: var(--ok);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--fg);
+    color: var(--bg);
+  }
+  :focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ---- Structural Grid primitives ---- */
+@layer components {
+  /* the visible vertical rails */
+  .rails {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 48rem;
+    border-inline: 1px solid var(--line);
+  }
+  /* alternating dot-pattern band */
+  .dots {
+    background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+  /* every grid cell gets the same hover feedback */
+  .cell {
+    transition: background-color 0.15s ease;
+  }
+  .cell:hover {
+    background-color: var(--hover);
+  }
+}
+
+/* one orchestrated entrance: the hero only */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-in { animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.hero-in:nth-child(2) { animation-delay: 0.07s; }
+.hero-in:nth-child(3) { animation-delay: 0.14s; }
+.hero-in:nth-child(4) { animation-delay: 0.21s; }
