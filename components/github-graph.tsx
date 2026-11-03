@@ -42,7 +42,7 @@ export async function GithubGraph() {
       id="activity"
       title="GitHub contributions"
       description={`${data.total.toLocaleString("en-US")} contributions in the past 12 months`}
-      dots
+      // dots
     >
       <div className="overflow-x-auto px-4 py-6 sm:px-6">
         <div

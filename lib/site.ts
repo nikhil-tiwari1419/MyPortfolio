@@ -1,3 +1,5 @@
+import strict from "node:assert/strict";
+
 /**
  * Single source of truth for all portfolio content.
  * Edit this file to update the site — no component changes needed.
@@ -153,9 +155,32 @@ export const stack: StackGroup[] = [
   },
 ];
 
+export type Education = {
+  institute: string;
+  icon: "school" | "college";
+  degree: string;
+  description: string;
+};
+
+export const education: Education[] = [
+  {
+    institute: "Shri Shivaji Science College, Nagpur",
+    icon: "college",
+    degree: "Bachelor of Computer Application (BCA) with Honours in Data Science",
+    description: "Maharashtra, India",
+  },
+  {
+    institute: "East Point School & Vishwas Junior College",
+    icon: "school",
+    degree: "Higher Secondary Education (10 + 2)",
+    description: "Maharashtra, India",
+  },
+];
+
 export const nav = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Work" },
+  { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
 ] as const;

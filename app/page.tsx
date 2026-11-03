@@ -1,5 +1,7 @@
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
+  CalendarMortarboardIcon,
+  CourseIcon ,
   AiBrain01Icon,
   ArrowUpRight01Icon,
   CheckmarkCircle02Icon,
@@ -16,9 +18,10 @@ import { Footer } from "@/components/footer";
 import { GithubGraph } from "@/components/github-graph";
 import { Section } from "@/components/section";
 import { TechChip } from "@/components/tech-chip";
-import { experience, projects, site, stack } from "@/lib/site";
+import { experience, education, projects, site, stack } from "@/lib/site";
 
 const stackIcons = { frontend: CodeIcon, backend: ServerStack01Icon, tooling: Wrench01Icon, ai: AiBrain01Icon };
+const eduIcons = { college: CalendarMortarboardIcon, school: CourseIcon  };
 
 const btn =
   "inline-flex h-9 items-center gap-2 rounded-md border border-line-strong px-3.5 text-sm font-medium transition-colors hover:bg-hover";
@@ -34,7 +37,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section id="home" aria-labelledby="hero-title" className="border-b border-line">
-        <div className="rails bg-bg px-4 py-12 sm:px-6 sm:py-16">
+        <div className="rails bg-bg px-4 py-10 sm:px-6 sm:py-16">
           <div className="hero-in">
             <Image
               src={site.avatar}
@@ -71,8 +74,8 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <Section id="about" title="About">
-        <div className="space-y-4 px-4 py-6 text-[15px] leading-relaxed text-muted sm:px-6">
+      <Section id="about" title="About" dots>
+        <div className="space-y-4 px-4 py-5 text-[15px] leading-relaxed text-muted sm:px-6">
           {site.about.map((paragraph) => (
             <p key={paragraph} className="max-w-[65ch]">
               {paragraph}
@@ -108,9 +111,8 @@ export default function Home() {
             return (
               <li
                 key={p.name}
-                className={`cell flex flex-col border-b border-dashed border-line-strong px-4 py-6 sm:px-6 ${
-                  lastOdd ? "sm:col-span-2" : "sm:odd:border-r"
-                }`}
+                className={`cell flex flex-col border-b border-dashed border-line-strong px-4 py-6 sm:px-6 ${lastOdd ? "sm:col-span-2" : "sm:odd:border-r"
+                  }`}
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
@@ -155,15 +157,35 @@ export default function Home() {
         </ul>
       </Section>
 
+      {/* Education */}
+      <Section id="education" title="Education" description="Where I studied.">
+        <ul>
+          {education.map((e) => (
+            <li
+              key={e.institute}
+              className="cell flex gap-4 border-b border-dashed border-line-strong px-4 py-5 last:border-b-0 sm:px-6"
+            >
+              <span className="grid size-10 shrink-0 place-items-center rounded-md border border-line text-muted">
+                <HugeiconsIcon icon={eduIcons[e.icon]} size={20} strokeWidth={1.8} />
+              </span>
+              <div>
+                <h3 className="font-medium">{e.institute}</h3>
+                <p className="mt-1 text-sm">{e.degree}</p>
+                <p className="text-sm text-muted">{e.description}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
       {/* Stack */}
-      <Section id="stack" title="Stack" description="Tools I reach for most days.">
+      <Section id="stack" title="Stack" description="Tools I reach for most days." dots>
         <div className="grid sm:grid-cols-2">
           {stack.map((g, i) => (
             <div
               key={g.label}
-              className={`cell border-b border-dashed border-line-strong px-4 py-6 sm:px-6 ${
-                i % 2 === 0 ? "sm:border-r" : ""
-              } ${i >= stack.length - 2 ? "sm:border-b-0" : ""} ${i === stack.length - 1 ? "border-b-0" : ""}`}
+              className={`cell border-b border-dashed border-line-strong px-4 py-6 sm:px-6 ${i % 2 === 0 ? "sm:border-r" : ""
+                } ${i >= stack.length - 2 ? "sm:border-b-0" : ""} ${i === stack.length - 1 ? "border-b-0" : ""}`}
             >
               <h3 className="flex items-center gap-2 text-sm font-medium">
                 <HugeiconsIcon icon={stackIcons[g.icon]} size={18} strokeWidth={1.8} />
