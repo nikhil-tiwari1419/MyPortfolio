@@ -45,7 +45,7 @@ const jsonLd = {
       url: site.url,
       image: site.avatar,
       jobTitle: "Full-Stack Developer",
-      description: site.about,
+      description: site.about.join(" "),
       sameAs: [site.socials.github, site.socials.linkedin],
       knowsAbout: ["React", "Next.js", "Node.js", "MongoDB", "TypeScript", "Generative AI"],
     },

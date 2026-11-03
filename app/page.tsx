@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section id="about" aria-labelledby="hero-title" className="border-b border-line">
+      <section id="home" aria-labelledby="hero-title" className="border-b border-line">
         <div className="rails bg-bg px-4 py-12 sm:px-6 sm:py-16">
           <div className="hero-in">
             <Image
@@ -52,7 +52,6 @@ export default function Home() {
             <p className="mt-2 text-lg text-muted">{site.role}</p>
           </div>
           <p className="hero-in mt-5 max-w-[62ch] leading-relaxed text-muted">{site.intro}</p>
-          <p className="hero-in mt-5 max-w-[62ch] leading-relaxed text-muted">{site.about}</p>
           <div className="hero-in mt-7 flex flex-wrap items-center gap-3">
             <a href="#projects" className={`${btn} bg-fg text-bg hover:bg-fg/90`}>
               View projects
@@ -70,6 +69,17 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* About */}
+      <Section id="about" title="About">
+        <div className="space-y-4 px-4 py-6 text-[15px] leading-relaxed text-muted sm:px-6">
+          {site.about.map((paragraph) => (
+            <p key={paragraph} className="max-w-[65ch]">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </Section>
 
       {/* Experience */}
       <Section id="experience" title="Experience" description="Roles, teams and open source work.">
